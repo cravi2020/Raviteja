@@ -1,0 +1,26 @@
+public with sharing class ActionSupportExampleController {
+
+	public String thankyoumessage	{set;get;}
+	public String Raviteja			{set;get;}
+	public Integer Counter 			{set;get;}
+
+public ActionSupportExampleController(){
+	Counter = 0;
+
+}
+public PageReference processName(){
+
+	counter+=1;
+	addThankyou(Raviteja);
+	addPageMessage('Your name is:'+Raviteja);
+	return null;
+}
+public void addPageMessage(String teja){
+	ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.INFO,teja));
+}
+public void addThankyou(string teja){
+	thankyoumessage = 'Thanks ' + teja + '. You are a peach. You have loaded this page ' + 
+			counter + ' times.';
+    
+	}
+}
